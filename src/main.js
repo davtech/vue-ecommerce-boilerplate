@@ -3,6 +3,7 @@ import AppLayout from './layouts/Index'
 import router from './router'
 import store from './store'
 
+import api from '@/services/api'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
 // Import Bootstrap an BootstrapVue CSS files (order is important)
@@ -16,6 +17,8 @@ Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 
 Vue.config.productionTip = false
+
+Vue.prototype.$api = api
 
 new Vue({
   router,
