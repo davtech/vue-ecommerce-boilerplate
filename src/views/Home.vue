@@ -1,18 +1,39 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/img/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <b-container>
+      <h1>Produtos</h1>
+
+      <b-row>
+        <b-col>
+          <div>
+            <b-card
+              title="Título do produto"
+              img-src="https://picsum.photos/600/300/?image=25"
+              img-alt="Image"
+              img-top
+              tag="article"
+              style="max-width: 20rem;"
+              class="mb-2"
+            >
+              <b-card-text  text-tag="small">
+                Descrição do produto
+              </b-card-text>
+              <b-card-text>
+                <strong>Valor: R$ 50,00</strong>
+              </b-card-text>
+
+              <b-button href="#" variant="primary">Adicionar ao carrinho de compras</b-button>
+            </b-card>
+          </div>
+        </b-col>
+      </b-row>
+
+    </b-container>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
-  }
+  name: 'Home'
 }
 </script>

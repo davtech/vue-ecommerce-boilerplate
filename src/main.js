@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import App from './App.vue'
+import AppLayout from './layouts/Index'
 import router from './router'
 import store from './store'
 
@@ -20,5 +20,5 @@ Vue.config.productionTip = false
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: h => h(AppLayout)
 }).$mount('#app')
