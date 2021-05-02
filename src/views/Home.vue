@@ -1,30 +1,35 @@
 <template>
   <div class="home">
     <b-container>
-      <h1>Produtos</h1>
 
       <b-row>
-        <b-col>
-          <div>
-            <b-card
-              title="Título do produto"
-              img-src="https://picsum.photos/600/300/?image=25"
-              img-alt="Image"
-              img-top
-              tag="article"
-              style="max-width: 20rem;"
-              class="mb-2"
-            >
-              <b-card-text  text-tag="small">
-                Descrição do produto
-              </b-card-text>
-              <b-card-text>
-                <strong>Valor: R$ 50,00</strong>
-              </b-card-text>
+        <b-col
+          class="mb-3"
+          sm="6"
+          md="3"
+          v-for="product in products"
+          :key="product._id"
+        >
+          <b-card
+            img-top
+            img-lazy
+            :title="product.name"
+            :img-src="product.image.lg"
+            :img-alt="product.name"
+            class="mb-2"
+          >
+            <b-card-text>
+              {{product.description}}
+            </b-card-text>
 
-              <b-button href="#" variant="primary">Adicionar ao carrinho de compras</b-button>
-            </b-card>
-          </div>
+            <div class="d-flex justify-content-between">
+              <strong class="pt-2">
+                {{product.price}}
+              </strong>
+              <b-button class="ml-auto" href="#" variant="primary">Comprar</b-button>
+            </div>
+
+          </b-card>
         </b-col>
       </b-row>
 
@@ -34,6 +39,29 @@
 
 <script>
 export default {
-  name: 'Home'
+  name: 'Home',
+  data: function () {
+    return {
+      products: []
+    }
+  },
+  mounted () {
+    this.$api.get('/products')
+      .then((response) => {
+        console.log(response)
+        this.products = response.data
+      })
+      .catch(error => console.log(error))
+  }
 }
 </script>
+
+<style lang="scss" scoped>
+  .card-body h4{
+   font-size: 1.2rem !important;
+   font-weight: 600;
+ }
+ p.card-text {
+   opacity: 0.6;
+ }
+</style>
