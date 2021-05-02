@@ -10,6 +10,7 @@
           v-for="product in products"
           :key="product._id"
         >
+          <!-- TODO: Carregar imagem correta de acordo com o tamanho da tela -->
           <b-card
             img-top
             img-lazy
