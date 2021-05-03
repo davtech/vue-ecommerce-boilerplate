@@ -49,7 +49,6 @@ export default {
   mounted () {
     this.$api.get('/products')
       .then((response) => {
-        console.log(response)
         this.products = response.data
       })
       .catch(error => console.log(error))
@@ -58,11 +57,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .card-body h4{
-   font-size: 1.2rem !important;
-   font-weight: 600;
- }
- p.card-text {
-   opacity: 0.6;
- }
+.card-body h4{
+  font-size: 1.2rem !important;
+  font-weight: 600;
+}
+p.card-text {
+  opacity: 0.6;
+}
 </style>
