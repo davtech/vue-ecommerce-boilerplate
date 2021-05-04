@@ -25,7 +25,7 @@
 
             <div class="d-flex justify-content-between">
               <strong class="pt-2">
-                {{product.price}}
+                R$ {{product.price}}
               </strong>
               <b-button class="ml-auto" href="#" variant="primary">Comprar</b-button>
             </div>
@@ -39,6 +39,8 @@
 </template>
 
 <script>
+import ProductService from '@/services/productsService'
+
 export default {
   name: 'Home',
   data: function () {
@@ -46,12 +48,13 @@ export default {
       products: []
     }
   },
-  mounted () {
-    this.$api.get('/products')
-      .then((response) => {
-        this.products = response.data
-      })
-      .catch(error => console.log(error))
+  async mounted () {
+    try {
+      const products = await ProductService.fetchProducts()
+      this.products = products
+    } catch (error) {
+      console.log(error)
+    }
   }
 }
 </script>
