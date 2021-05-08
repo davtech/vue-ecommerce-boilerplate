@@ -1,5 +1,5 @@
 <template>
-  <header class="mb-3">
+  <header>
     <b-navbar toggleable="lg" type="dark" variant="info">
     <b-navbar-brand to="/">Ecommerce</b-navbar-brand>
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -24,7 +24,7 @@
             <b-dropdown-item href="#">Sair</b-dropdown-item>
           </b-nav-item-dropdown>
 
-          <b-nav-item to="/cart"> 0 produtos</b-nav-item>
+          <b-nav-item to="/carrinho-de-compras"> 0 produtos</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>

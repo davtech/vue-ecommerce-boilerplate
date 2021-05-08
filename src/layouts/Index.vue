@@ -9,11 +9,10 @@
 </template>
 
 <script>
-import AppHeader from './Header.vue'
-import AppFooter from './Footer.vue'
+import AppHeader from './header/Header.vue'
+import AppFooter from './footer/Footer.vue'
 
 export default {
-  name: 'AppLayout',
   components: {
     AppHeader,
     AppFooter
