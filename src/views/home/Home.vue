@@ -4,14 +4,13 @@
 
     <b-container>
       <b-row>
-        <b-col
-          sm="6"
-          md="4"
+        <div
+          class="products col-sm-6 col-md-4"
           v-for="product in products"
           :key="product._id"
         >
           <ProductItem :product="product" />
-        </b-col>
+        </div>
       </b-row>
     </b-container>
   </div>
